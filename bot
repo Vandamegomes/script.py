@@ -1,14 +1,30 @@
-from chatterbot.trainers import ListTrainer from chatterbot import ChatBot #from random import randint from time import sleep bot1 = ChatBot('bot.get_response')
+from chatterbot.trainers import ListTrainer 
+from chatterbot import ChatBot 
+#from random import randint 
+from time import sleep 
+bot1 = ChatBot('bot.get_response')
 
-conv2 = ['Ola','Olá, eu sou Ronan. Qual é o seu nome?', 'Prazer, sou Jarvis em que posso ajuda lo? ', 'Qual o nome da sua mãe?', 'Qual é o seu sinal de nascimento?', 'Quantos filhos você tem?', 'Você prefere o vinho vermelho ou branco?', 'Eu gosto de bananas. Qual é a sua fruta favorita?', 'Que música você gosta?', 'Qual é a tua canção favorita?','Eu gosto de esperar Godot. Qual é a sua peça favorita?', 'De que corante você dente seu cabelo?', 'Você se lembra do meu nome?', 'Onde você mora?', 'Onde você gosta de ir de férias?', 'Eu tenho um Mazda. O que faz do carro você tem?', 'Eu gosto do Linux. Qual sistema operacional do computador você gosta?', 'Eu sou um athiest. Qual religião você é?', 'Quem inventou o telefone?', 'Eu sou uma personalidade de Tipo B. Qual tipo você é?', 'Que emoções você está sentindo agora?', 'Que horas você costuma ir para a cama?', 'Gosto de interagir!', 'Boa noite!',] bot1.set_trainer(ListTrainer) bot1.train(conv2)
+conv2 = ['Ola','Olá, eu sou Ronan. Qual é o seu nome?', 'Prazer, sou Jarvis em que posso ajuda lo? ',
+    'Qual o nome da sua mãe?', 'Qual é o seu sinal de nascimento?', 'Quantos filhos você tem?',
+    'Você prefere o vinho vermelho ou branco?', 'Eu gosto de bananas. Qual é a sua fruta favorita?', 
+    'Que música você gosta?', 'Qual é a tua canção favorita?','Eu gosto de esperar Godot. Qual é a sua peça favorita?', 
+    'De que corante você dente seu cabelo?', 'Você se lembra do meu nome?', 'Onde você mora?', 'Onde você gosta de ir de férias?', 
+    'Eu tenho um Mazda. O que faz do carro você tem?', 'Eu gosto do Linux. Qual sistema operacional do computador você gosta?', 
+    'Eu sou um athiest. Qual religião você é?', 'Quem inventou o telefone?', 'Eu sou uma personalidade de Tipo B. Qual tipo você é?', 
+    'Que emoções você está sentindo agora?', 'Que horas você costuma ir para a cama?', 'Gosto de interagir!', 'Boa noite!',] 
+
+bot1.set_trainer(ListTrainer) bot1.train(conv2)
 
 bot = ChatBot('bot1.get_response')
 
-conv1 = ['Olá, eu sou Ronan. Qual é o seu nome?', 'Prazer, sou Jarvis em que posso ajuda lo? ', 'Qual o nome da sua mãe?', 'Qual é o seu sinal de nascimento?', 'Quantos filhos você tem?', 'Você prefere o vinho vermelho ou branco?',]
+conv1 = ['Olá, eu sou Ronan. Qual é o seu nome?', 'Prazer, sou Jarvis em que posso ajuda lo? ', 'Qual o nome da sua mãe?', 
+    'Qual é o seu sinal de nascimento?', 'Quantos filhos você tem?', 'Você prefere o vinho vermelho ou branco?',]
 
 bot.set_trainer(ListTrainer) bot.train(conv1)
 
-while True: try: sleep(1.0) quest = bot1.get_response('List')
+while True:
+    try: sleep(1.0)
+    quest = bot1.get_response('List')
 
     # We pass None to this method because the parameter
     # is not used by the TerminalAdapter
